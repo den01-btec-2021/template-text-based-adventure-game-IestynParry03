@@ -4,8 +4,16 @@ def main():
     print(" Hi " + Player_name)
     Lives = 3
     print(f" you have {Lives} remaining ")
-
-
+    print("there are 4 directions to choose from North, East, South, West")
+    player_direction = input("which direction do you want to go?")
+    if player_direction == "North":
+        print ("you went North")
+    elif player_direction == "South":
+        player_direction == "South"
+    elif player_direction == "East":
+        print("you went East")
+    Else:
+        print("you went West")
 
 
 
