@@ -9,11 +9,13 @@ def main():
     if player_direction == "North":
         print ("you went North")
     elif player_direction == "South":
-        player_direction == "South"
+        print("you went South")
     elif player_direction == "East":
         print("you went East")
-    Else:
+    elif player_direction == "West":
         print("you went West")
+    else:
+        print("invalid response")
 
 
 
