@@ -38,7 +38,7 @@ def main():
             room_direction = "East"
             puzzle = "What is 9+9? "
             puzzle_solution = "18"
-            Key_number = "3"
+            key_number = "3"
             lives = in_room(backpack,lives,room_direction,puzzle,puzzle_solution,key_number)
             
                 
@@ -48,7 +48,7 @@ def main():
             room_direction = "West"
             puzzle = "What is 6+6? "
             puzzle_solution = "12"
-            Key_number = "4"
+            key_number = "4"
             lives = in_room(backpack,lives,room_direction,puzzle,puzzle_solution,key_number)
             
                   
@@ -59,7 +59,7 @@ def main():
         
         # if backpack is full, open door, win game
         if ("Key 1" in backpack) and ("Key 2" in backpack) and ("Key 3" in backpack) and ("Key 4" in backpack):
-            print("Door open, Win game")
+            print("Congrations you have collected all keys and won the game!")
             exit()
         
         if lives ==0:
@@ -71,7 +71,7 @@ def in_room(backpack,lives,room_direction,puzzle,puzzle_solution,key_number):
     puzzle_guess = input(puzzle)
     if puzzle_guess == puzzle_solution:
         print(f"Correct. Key {key_number} collected.")
-        backpack.append(f"Key {Key_number}")
+        backpack.append(f"Key {key_number}")
     else:
         lives -= 1
         print(f"you have lost a life, you now have {lives} remaining ")
