@@ -1,3 +1,4 @@
+from audioop import add
 from msilib.schema import Directory
 
 
@@ -71,11 +72,45 @@ def in_room(backpack,lives,room_direction,puzzle,puzzle_solution,key_number):
     puzzle_guess = input(puzzle)
     if puzzle_guess == puzzle_solution:
         print(f"Correct. Key {key_number} collected.")
-        backpack.append(f"Key {key_number}")
+        if f"Key {key_number}" not in backpack:
+            backpack.append(f"Key {key_number}")
+        else:
+            print("You have already collected this Key!")
     else:
         lives -= 1
         print(f"you have lost a life, you now have {lives} remaining ")
         
-    return lives 
+    return lives
 
-main()
+def addition(a,b):
+    return a+b
+
+def test_addition():
+    assert addition(3,5) == 8
+    assert addition(-1,0) == -1
+    assert addition(-1,1) == 0
+
+def test_in_room():
+
+    backpack = []
+    lives = 3
+    room_direction = "North"
+    puzzle = "What is 6 + 6?"
+    puzzle_solution = "12"
+    key_number = "1"
+
+    #check correct??
+    assert in_room(backpack,lives,room_direction,puzzle,puzzle_solution,key_number) == 2 # lives -1
+    assert f"Key {key_number}" in backpack #check that this key is the backpack is in the backpack
+    
+    
+    in_room(backpack,lives,room_direction,puzzle,puzzle_solution,key_number) == 3
+    assert backpack != ["Key 1","Key 1"]
+    
+    
+    if __name__ == "__main__":
+        
+        #main()
+        #value = addition(3,2)
+        #print(value)
+        test_addition()
